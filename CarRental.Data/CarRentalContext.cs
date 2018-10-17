@@ -24,7 +24,7 @@ namespace CarRental.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data source = (localdb)\\MSSQLLocalDB; Initial Catalog = CarRental; Integrated Security = SSPI");
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["CarRentalDB"].ConnectionString);
         }
     }
 }
