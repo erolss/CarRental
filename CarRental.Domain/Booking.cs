@@ -10,10 +10,9 @@ namespace CarRental.Domain
 
         public Customer BookingCustomer { get; set; }
         public int CustomerId { get; set; }
-            
-        ICollection<Car> Cars { get; set; }
 
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public List<BookingCar> BookingCars { get; set; }
     }
 }
