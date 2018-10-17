@@ -133,7 +133,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarRental.Domain2\CarRental.Domain.csproj">
+    <ProjectReference Include="..\CarRental.Domain\CarRental.Domain.csproj">
       <Project>{7dc54934-5eb1-472e-a726-e11b50b11ec7}</Project>
       <Name>CarRental.Domain</Name>
     </ProjectReference>
