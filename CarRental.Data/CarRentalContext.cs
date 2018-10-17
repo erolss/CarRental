@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Configuration;
 
 namespace CarRental.Data
 {
-    public class CarRentalContext : DbContext
+    public class CarRentalContext: DbContext
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Booking> Bookings { get; set; }
@@ -19,6 +20,11 @@ namespace CarRental.Data
         {
             modelBuilder.Entity<BookingCar>().HasKey(x => new { x.BookingId, x.CarId });
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data source = (localdb)\\MSSQLLocalDB; Initial Catalog = CarRental; Integrated Security = SSPI");
         }
     }
 }
