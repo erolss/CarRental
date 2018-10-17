@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarRental.Domain
 {
@@ -10,6 +11,7 @@ namespace CarRental.Domain
         public string Brand { get; set; }
         public string Model { get; set; }
         public DateTime ManufacturingYear { get; set; }
+        public List<BookingCar> BookingCars { get; set; }
 
     }
 }
