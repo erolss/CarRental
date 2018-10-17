@@ -126,6 +126,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarRentalContext.cs" />
+    <Compile Include="Migrations\20181017095154_Intial.cs" />
+    <Compile Include="Migrations\20181017095154_Intial.designer.cs">
+      <DependentUpon>20181017095154_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CarRentalContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,11 +138,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarRental.Domain2\CarRental.Domain.csproj">
+    <ProjectReference Include="..\CarRental.Domain\CarRental.Domain.csproj">
       <Project>{7dc54934-5eb1-472e-a726-e11b50b11ec7}</Project>
       <Name>CarRental.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
