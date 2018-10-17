@@ -12,18 +12,9 @@ namespace CarRental.Data
     {
         public static CarRentalContext context = new CarRentalContext();
 
-        /// <summary>
-        /// Changes the value of the car-property "Deleted" to true,
-        /// doesn't explicitly remove the car from the database.
-        /// </summary>
-        /// <param name="carId"></param>
-        public static void DeleteCar(int carId)
+        public static void AddCustomer (Customer customer)
         {
-            var carToDelete = context.Cars.Where(c => c.Id == carId).FirstOrDefault();
-
-
-            carToDelete.Deleted = true;
-            context.Cars.Update(carToDelete);
+            context.Customers.Add(customer);
             context.SaveChanges();
         }
 
@@ -50,6 +41,41 @@ namespace CarRental.Data
             context.Bookings.RemoveRange(customer.Bookings);
             context.Customers.Remove(customer);
         }
+
+        /// <summary>
+        /// Method that updates a customer object and saves the
+        /// updated data to the database. Which fields are updated
+        /// are not relevant in this step.
+        /// </summary>
+        /// <param name="customer"></param>
+        public static void UpdateCustomer(Customer customer)
+        {
+            context.Customers.Update(customer);
+
+            context.SaveChanges();
+        }
+
+        public static void AddCar (Car car)
+        {
+            context.Cars.Add(car);
+            context.SaveChanges();
+        }
+
+        /// <summary>
+        /// Changes the value of the car-property "Deleted" to true,
+        /// doesn't explicitly remove the car from the database.
+        /// </summary>
+        /// <param name="carId"></param>
+        public static void DeleteCar(int carId)
+        {
+            var carToDelete = context.Cars.Where(c => c.Id == carId).FirstOrDefault();
+
+
+            carToDelete.Deleted = true;
+            context.Cars.Update(carToDelete);
+            context.SaveChanges();
+        }
+
 
         /// <summary>
         /// Finds all posts in BookingCar-table, deletes all posts related to given bookingID.
