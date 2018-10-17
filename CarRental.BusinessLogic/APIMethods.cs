@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRental.BusinessLogic
 {
-    public class Class1
+    public class APIMethods
     {
         public Booking AddBooking (Booking booking)
         {
@@ -16,7 +16,7 @@ namespace CarRental.BusinessLogic
 
         public void DeleteBooking (int bookingId)
         {
-
+            
         }
 
         public Customer AddCustomer (Customer customer)
