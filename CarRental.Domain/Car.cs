@@ -11,6 +11,7 @@ namespace CarRental.Domain
         public string Brand { get; set; }
         public string Model { get; set; }
         public int ManufacturingYear { get; set; }
+        public bool Available { get; set; }
         public List<BookingCar> BookingCars { get; set; }
 
     }
