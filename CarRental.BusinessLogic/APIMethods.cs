@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarRental.Data;
 
 namespace CarRental.BusinessLogic
 {
@@ -21,11 +22,18 @@ namespace CarRental.BusinessLogic
 
         public Customer AddCustomer (Customer customer)
         {
+            var repo = new Repository();
+            repo.Add(customer);
             throw new NotImplementedException();
         }
 
         public void DeleteCustomer (int customerId)
         {
+            var repo = new Repository();
+            var list = repo.FindBy<Customer>(c => c.Id == 1).Single();
+            var dataset = repo.DataSet<Customer>().Where(c => c.Email == "");
+
+            
 
         }
 

@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CarRental.Data\CarRental.Data.csproj">
+      <Project>{b891ea39-196f-485e-ba71-d092100c5f0a}</Project>
+      <Name>CarRental.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CarRental.Domain\CarRental.Domain.csproj">
       <Project>{7DC54934-5EB1-472E-A726-E11B50B11EC7}</Project>
       <Name>CarRental.Domain</Name>

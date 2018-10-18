@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace CarRental.Data
 {
-    public class CarRentalContext: DbContext
+    public class CarRentalContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Booking> Bookings { get; set; }

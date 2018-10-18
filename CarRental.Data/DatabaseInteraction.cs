@@ -17,6 +17,8 @@ namespace CarRental.Data
             context.Customers.Add(customer);
             context.SaveChanges();
         }
+       
+        
 
         /// <summary>
         /// Finds a customer based on customerId, 
