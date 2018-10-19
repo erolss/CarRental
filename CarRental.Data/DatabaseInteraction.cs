@@ -17,6 +17,8 @@ namespace CarRental.Data
             context.Customers.Add(customer);
             context.SaveChanges();
         }
+       
+        
 
         /// <summary>
         /// Finds a customer based on customerId, 
@@ -71,7 +73,7 @@ namespace CarRental.Data
             var carToDelete = context.Cars.Where(c => c.Id == carId).FirstOrDefault();
 
 
-            carToDelete.Deleted = true;
+           // carToDelete.Deleted = true;
             context.Cars.Update(carToDelete);
             context.SaveChanges();
         }

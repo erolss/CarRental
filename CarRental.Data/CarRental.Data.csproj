@@ -8,8 +8,8 @@
     <ProjectGuid>{B891EA39-196F-485E-BA71-D092100C5F0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarRental.Data2</RootNamespace>
-    <AssemblyName>CarRental.Data2</AssemblyName>
+    <RootNamespace>CarRental.Data</RootNamespace>
+    <AssemblyName>CarRental.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -127,12 +127,18 @@
   <ItemGroup>
     <Compile Include="CarRentalContext.cs" />
     <Compile Include="DatabaseInteraction.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\20181017095154_Intial.cs" />
     <Compile Include="Migrations\20181017095154_Intial.designer.cs">
       <DependentUpon>20181017095154_Intial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20181019094453_Added_Car_Available_props.cs" />
+    <Compile Include="Migrations\20181019094453_Added_Car_Available_props.designer.cs">
+      <DependentUpon>20181019094453_Added_Car_Available_props.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CarRentalContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

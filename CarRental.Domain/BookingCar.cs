@@ -7,8 +7,8 @@ namespace CarRental.Domain
     public class BookingCar
     {
         public int BookingId { get; set; }
-        public int CarId { get; set; }
         public Booking Booking { get; set; }
+        public int CarId { get; set; }
         public Car Car { get; set; }
     }
 }

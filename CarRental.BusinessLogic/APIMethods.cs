@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarRental.Data;
 
 namespace CarRental.BusinessLogic
 {
@@ -21,12 +22,12 @@ namespace CarRental.BusinessLogic
 
         public Customer AddCustomer (Customer customer)
         {
-            throw new NotImplementedException();
+           throw new NotImplementedException();
         }
 
         public void DeleteCustomer (int customerId)
         {
-
+           throw new NotImplementedException();
         }
 
         public Customer EditCustomer (Customer customer)
