@@ -22,19 +22,12 @@ namespace CarRental.BusinessLogic
 
         public Customer AddCustomer (Customer customer)
         {
-            var repo = new Repository();
-            repo.Add(customer);
-            throw new NotImplementedException();
+           throw new NotImplementedException();
         }
 
         public void DeleteCustomer (int customerId)
         {
-            var repo = new Repository();
-            var list = repo.FindBy<Customer>(c => c.Id == 1).Single();
-            var dataset = repo.DataSet<Customer>().Where(c => c.Email == "");
-
-            
-
+           throw new NotImplementedException();
         }
 
         public Customer EditCustomer (Customer customer)

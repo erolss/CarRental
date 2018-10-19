@@ -48,16 +48,7 @@ namespace CarRental.Data
         {
             context.Set<T>().RemoveRange(entities);
         }
-        //public IQueryable<T> DataSet<T>(params string[] includes) where T : class
-        //{
-        //    var set = DataSet<T>();
-
-        //    foreach (var include in includes)
-        //        set = set.Include(include);
-
-        //    return set;
-        //}
-
+        
         public  IQueryable<T> DataSet<T>() where T : class {
             return context.Set<T>();
         }
@@ -66,18 +57,9 @@ namespace CarRental.Data
             return Context.Set<T>().Where(predicate).ToList<T>();
         }
         
-
-        public virtual ICollection<T> GetAll<T>() where T : class
-        {
-            return context.Set<T>().ToList();
-        }
-
         public virtual void SaveChanges() {
             context.SaveChanges();
         }
-
-        public void Dispose()
-        {
-        }
+        
     }
 }
