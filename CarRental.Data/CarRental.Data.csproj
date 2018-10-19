@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="CarRentalContext.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\20181017095154_Intial.cs" />
     <Compile Include="Migrations\20181017095154_Intial.designer.cs">
       <DependentUpon>20181017095154_Intial.cs</DependentUpon>
