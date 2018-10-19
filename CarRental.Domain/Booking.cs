@@ -13,6 +13,6 @@ namespace CarRental.Domain
 
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public List<BookingCar> BookingCars { get; set; }
+        public ICollection<BookingCar> BookingCars { get; set; }
     }
 }
