@@ -53,6 +53,11 @@ namespace CarRental.Data
         public  IQueryable<T> DataSet<T>() where T : class {
             return Context.Set<T>();
         }
+
+        public virtual void Edit<T>(T entity) where T: class
+        {
+            Context.Set<T>().Update(entity);
+        }
         public virtual ICollection<T> FindBy<T>(Expression<Func<T, bool>> predicate) where T : class
         {
             return Context.Set<T>().Where(predicate).ToList<T>();

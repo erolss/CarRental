@@ -16,5 +16,11 @@ namespace CarRental.Domain
         public bool Deleted { get; set; }
         public ICollection<BookingCar> BookingCars { get; set; }
 
+        public Car ()
+        {
+            Available = true;
+            Deleted = false;
+        }
+
     }
 }

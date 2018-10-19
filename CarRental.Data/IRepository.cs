@@ -19,7 +19,9 @@ namespace CarRental.Data
         IQueryable<T> DataSet<T>() where T : class;
 
         ICollection<T> FindBy<T>(Expression<Func<T, bool>> predicate) where T : class;
-        
+
+        void Edit<T>(T entity) where T : class;
+
         void SaveChanges();
     }
 }
