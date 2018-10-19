@@ -57,7 +57,11 @@ namespace CarRental.Data2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Available");
+
                     b.Property<string>("Brand");
+
+                    b.Property<bool>("Deleted");
 
                     b.Property<int>("ManufacturingYear");
 
