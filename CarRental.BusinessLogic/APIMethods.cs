@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarRental.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarRental.BusinessLogic
 {
@@ -48,7 +49,13 @@ namespace CarRental.BusinessLogic
         public List<Car> ListAvailableCars (DateTime dateFrom, DateTime dateTo)
         {
             //List of bookings during specified time interval.
-            List<Booking> bookings = repos.FindBy<Booking>(b => b.StartTime >= dateFrom && b.EndTime <= dateTo).ToList();
+            //List<Booking> bookings = repos.FindBy<Booking>(b => b.StartTime <= dateTo && b.EndTime >= dateFrom).ToList();
+
+            List<Booking> bookings = repos.Context.Bookings
+                .Include(b => b.BookingCars)
+                .ThenInclude(bc => bc.Car)
+                .Where(b => (b.StartTime < dateTo && b.EndTime > dateFrom)).ToList();
+
             List<Car> notAvailableCars = new List<Car>();
             foreach(Booking b in bookings)
             {
@@ -58,7 +65,7 @@ namespace CarRental.BusinessLogic
                 }
             }
             repos.SaveChanges();
-            return repos.FindBy<Car>(c=> !notAvailableCars.Any(car => car.Id == c.Id)).ToList();          
+            return repos.FindBy<Car>(c => !notAvailableCars.Any(car => car.Id == c.Id)).ToList();          
         }
 
         public Car DropOffCar (int carId)
